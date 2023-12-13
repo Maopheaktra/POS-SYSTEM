@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* ========Globals============= */
 * {
     font-family: "Ubuntu", sans-serif;
@@ -96,7 +95,6 @@ body {
     text-align: start;
     white-space: nowrap;
 }
-=======
 /* =====Main======= */
 .main {
     position: absolute;
@@ -217,4 +215,3 @@ body {
     background: var(--blue);
     color: var(--white);
 }
->>>>>>> display-dashboard
