@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* ========Globals============= */
 * {
     font-family: "Ubuntu", sans-serif;
@@ -95,3 +96,125 @@ body {
     text-align: start;
     white-space: nowrap;
 }
+=======
+/* =====Main======= */
+.main {
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 200px;
+    min-height: 100vh;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    background: var(--white);
+    transition: 0.5s;
+}
+
+.topbar {
+    widows: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.search {
+    position: relative;
+    width: 400px;
+    margin: 0 10px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.search label {
+    position: relative;
+    width: 100%;
+}
+
+.search label input {
+    width: 100%;
+    height: 40px;
+    padding: 5px 20px;
+    font-size: 18px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 35px;
+    outline: none;
+    border: 1px solid var(--black2);
+}
+
+.search label ion-icon {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-size: 1.2rem;
+}
+/* ======#card======= */
+.cardbox{
+    position: relative;
+    width: 100%;
+    padding: 25px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.cardbox .card{
+    position: relative;
+    background: var(--white);
+    width: 100%;
+    margin-top: 50px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column-reverse;
+    border-radius: 20px;
+    box-shadow: 0 7px 25px rgb(0,0,0,0.08);
+}
+.cardbox .card .number{
+    position: relative;
+    font-size: 30px;
+    text-align: center;
+    color: var(--blue);
+}
+.cardbox .card .cardName{
+    color: var(--black2);
+    font-size: 1.1rem;
+    text-align: center;
+}
+/* =====================table================== */
+.details{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+}
+.details table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+.details table thead td{
+    font-weight: 600;
+}
+
+.details table tr{
+    border-bottom: 1px solid #000;
+    text-align: center;
+    
+}
+.details table th , td {
+    padding: 10px;
+}
+.details table tr:last-child{
+    border-bottom: none;
+}
+.details table th {
+    background: var(--pink);
+    color: var(--white);
+}
+.details table tbody tr:hover {
+    background: var(--blue);
+    color: var(--white);
+}
+>>>>>>> display-dashboard
