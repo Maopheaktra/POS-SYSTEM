@@ -67,9 +67,34 @@
         </div>
     </div>
     <div class="content">
-        <div class="group-actions">
-            <ion-icon name="add-circle-outline"></ion-icon>
-            <button type="add">Add Product</button>
+        <div class="group-add">
+            <button type="submit"><ion-icon name="add-circle-outline"></ion-icon>Add Product</button>
+            <div class="filter-product">
+                <label for="">Filter product:</label>
+                <select name="" id="">
+                    <option value="">All products</option>
+                    <option value="">Coca cola</option>
+                    <option value="">Milky Ta</option>
+                    <option value="">Red bull</option>
+                    <option value="">Indomies</option>
+                </select>
+            </div>
+            <input type="search" placeholder="Search product by name">
+        </div>
+        <div class="display-pro">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product ID</th>
+                        <th>Name</th>
+                        <th>Quantity</th>
+                        <th>Categorie</th>
+                        <th>Price</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
         </div>
     </div>
 </body>
