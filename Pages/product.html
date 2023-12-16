@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="../css/product.css">
+    <script src="../JS/product.js" defer></script>
 </head>
+
 <body>
+
     <!-- =============Navigation========== -->
     <div class="container">
         <div class="navigation">
@@ -21,16 +27,14 @@
                 </li>
                 <li>
                     <a href="/dashboard.html">
-                        <span class="icon">
-                            <ion-icon name="grid-outline"></ion-icon>
-                        </span>
+                        <span class="material-symbols-outlined">shopping_cart</span>
                         <span class="title">Dashboard</span>
                     </a>
                 </li>
                 <li>
                     <a href="/Pages/product.html">
-                        <span class="icon">
-                            <ion-icon name="cart-outline"></ion-icon>
+                        <span class="material-symbols-outlined">
+                            grocery
                         </span>
                         <span class="title">Products</span>
                     </a>
@@ -38,7 +42,9 @@
                 <li>
                     <a href="/Pages/categories.html">
                         <span class="icon">
-                            <ion-icon name="apps-outline"></ion-icon>
+                            <span class="material-symbols-outlined">
+                                category
+                            </span>
                         </span>
                         <span class="title">Categorie</span>
                     </a>
@@ -46,8 +52,8 @@
 
                 <li>
                     <a href="/Pages/order.html">
-                        <span class="icon">
-                            <ion-icon name="cart-outline"></ion-icon>
+                        <span class="material-symbols-outlined">
+                            shopping_bag
                         </span>
                         <span class="title">Order</span>
                     </a>
@@ -55,12 +61,56 @@
             </ul>
         </div>
     </div>
+    
+    
+    <div class="content">
+        <div class="group">
+            <input type="text" placeholder="Product" id="product">
+            <div class="group-select">
+                <select id="product-name">
+                    <option value="product">Coca cola</option>
+                    <option value="product">Noodle</option>
+                    <option value="product">Milky Ta</option>
+                </select>
+            </div>
+            <input type="text" placeholder="quantity">
+            <input type="text" placeholder="Net Price">
+            <input type="text" placeholder="Gross Price">
+        </div>
+        <div class="dis">
+            <div class="group-add">
+                <button type="submit"><ion-icon name="add-circle-outline"></ion-icon>Add Product</button>
+                <div class="filter-product">
+                    <label for="">Filter product:</label>
+                    <select name="" id="">
+                        <option value="">All products</option>
+                        <option value="">Coca cola</option>
+                        <option value="">Milky Ta</option>
+                        <option value="">Red bull</option>
+                        <option value="">Indomies</option>
+                    </select>
+                </div>
+                <div class="search">
+                    <input type="text" placeholder="Search product by name">
+                    <button type="submit">Search</button>
+                </div>
+            </div>
+            <div class="g">
+                <table>
+                    <!-- <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Quantity</th>
+                                <th>Categorie</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody> -->
+                </table>
+            </div>
+        </div>
+        </div>
 </body>
-<script src="/JS/dashboard.js"></script>
-<!-- ====icon icons=== -->
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-</html>
-</body>
 </html>
