@@ -17,7 +17,7 @@
     <div class="container">
         <div class="navigation">
             <ul>
-                <li>
+                <li id="logo">
                     <a href="">
                         <span class="icon">
                             <ion-icon name="cart-outline"></ion-icon>
@@ -25,13 +25,13 @@
                         <span class="title">POS System</span>
                     </a>
                 </li>
-                <li>
+                <li id="menu">
                     <a href="/dashboard.html">
                         <span class="material-symbols-outlined">shopping_cart</span>
                         <span class="title">Dashboard</span>
                     </a>
                 </li>
-                <li>
+                <li id="menu">
                     <a href="/Pages/product.html">
                         <span class="material-symbols-outlined">
                             grocery
@@ -39,7 +39,7 @@
                         <span class="title">Products</span>
                     </a>
                 </li>
-                <li>
+                <li id="menu">
                     <a href="/Pages/categories.html">
                         <span class="icon">
                             <span class="material-symbols-outlined">
@@ -50,7 +50,7 @@
                     </a>
                 </li>
 
-                <li>
+                <li id="menu">
                     <a href="/Pages/order.html">
                         <span class="material-symbols-outlined">
                             shopping_bag
@@ -61,15 +61,28 @@
             </ul>
         </div>
     </div>
-    
-    
+
     <div class="content">
+        <div class="group">
+            <input type="text" placeholder="Product" id="product">
+            <div class="group-select">
+                <select id="product-name">
+                    <option value="">Select Product Name</option>
+                    <option value="product">Coca cola</option>
+                    <option value="product">Noodle</option>
+                    <option value="product">Milky Ta</option>
+                </select>
+            </div>
+            <input type="text" placeholder="quantity">
+            <input type="text" placeholder="Net Price">
+            <input type="text" placeholder="Gross Price">
+        </div>
         <div class="dis">
             <div class="group-add">
-                <button type="submit"><ion-icon name="add-circle-outline"></ion-icon>Add Product</button>
+                <button type="submit">Add Product</button>
                 <div class="filter-product">
-                    <label for="">Filter product:</label>
-                    <select name="" id="">
+                    <label>Filter product:</label>
+                    <select name="" id="product">
                         <option value="">All products</option>
                         <option value="">Coca cola</option>
                         <option value="">Milky Ta</option>
@@ -84,20 +97,21 @@
             </div>
             <div class="g">
                 <table>
-                    <!-- <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>Quantity</th>
-                                <th>Categorie</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody></tbody> -->
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Categorie</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
                 </table>
             </div>
         </div>
-        </div>
+    </div>
 </body>
 
 </html>
