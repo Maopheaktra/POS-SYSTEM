@@ -22,6 +22,7 @@ let table = document.querySelector('table');
 // tr.appendChild(thCateg)
 // tr.appendChild(thAction)
 // console.log(table);
+
 disTable.appendChild(table)
 let product = {
     id: "001",
