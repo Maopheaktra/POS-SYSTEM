@@ -1,0 +1,229 @@
+/* ========Globals============= */
+* {
+    font-family: "Ubuntu", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    /* flex-direction: row; */
+}
+
+.navigation {
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    background: #2a2185;
+    border-left: 10px solid #2a2185;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.navigation ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.material-symbols-outlined{
+    margin-top: 15px;
+}
+.navigation ul li {
+    position: relative;
+    width: 50%;
+    list-style: none;
+
+}
+
+.navigation ul li:hover {
+    background: #999;
+}
+#menu{
+    margin-left: 100px;
+}
+.navigation ul li:nth-child(1) {
+    pointer-events: none;
+}
+
+.navigation ul li a {
+    position: relative;
+    display: flex;
+    /* display: block; */
+    /* width: 100%; */
+    text-decoration: none;
+    color: #fff;
+}
+
+.navigation ul li:hover a {
+    color: #2a2185;
+
+}
+
+.navigation ul li .icon {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    /* line-height: 60px; */
+    text-align: center;
+}
+
+/* .navigation ul li .icon ion-icon {
+    font-size: 1.75rem;
+} */
+
+.navigation ul li a .title {
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 30px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+}
+
+/* .navigation .logo {
+    width: 2px;
+    height: 5px;
+    display: flex;
+    justify-self: start;
+    margin-left: 0px;
+} */
+
+
+/* =====Main======= */
+.main {
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 100px;
+    min-height: 100vh;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    background: var(--white);
+    transition: 0.5s;
+}
+
+.topbar {
+    widows: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.search {
+    position: relative;
+    width: 400px;
+    margin: 0 10px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.search label {
+    position: relative;
+    width: 100%;
+}
+
+.search label input {
+    width: 100%;
+    height: 40px;
+    padding: 5px 20px;
+    font-size: 18px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 35px;
+    outline: none;
+    border: 1px solid var(--black2);
+}
+
+.search label ion-icon {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-size: 1.2rem;
+}
+/* ======#card======= */
+.cardbox{
+    position: relative;
+    width: 100%;
+    padding: 25px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.cardbox .card{
+    position: relative;
+    background: var(--white);
+    width: 100%;
+    margin-top: 50px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column-reverse;
+    border-radius: 20px;
+    box-shadow: 0 7px 25px rgb(0,0,0,0.08);
+}
+.cardbox .card .number{
+    position: relative;
+    font-size: 30px;
+    text-align: center;
+    color: var(--blue);
+}
+.cardbox .card .cardName{
+    color: var(--black2);
+    font-size: 1.1rem;
+    text-align: center;
+}
+/* =====================table================== */
+.details{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+}
+.details table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+.details table th{
+    background: pink;
+}
+.details table thead td{
+    font-weight: 600;
+}
+
+.details table tr{
+    border-bottom: 1px solid #000;
+    text-align: center;
+    
+}
+.details table th , td {
+    padding: 10px;
+}
+.details table tr:last-child{
+    border-bottom: none;
+}
+.details table th {
+    background: pink;
+    color: #fff;
+}
+.details table tbody tr:hover {
+    background: #2a2185;
+    color: #fff;
+}
