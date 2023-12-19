@@ -15,7 +15,7 @@ function addCategory() {
           <button onclick="removeCategory(this)">Remove</button>
         </td>
       `;
-      
+
       tableBody.appendChild(newRow);
       
       // Clear input fields
