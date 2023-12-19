@@ -33,6 +33,7 @@ function getCategories() {
     } else {
         saveCategories();
     }
+    Show_addCategories()
 }
 // Data --------------------------------------
 let categories = [];
@@ -107,7 +108,6 @@ function Show_addCategories() {
         tbody.appendChild(tableRow);
     }
     saveCategories();
-    getCategories();
     console.log(2);
 }
 function clearInput(){
@@ -122,4 +122,6 @@ function onCreate() {
 function onCancel() {
     adddialog.style.display = "none";
 }
+getCategories();
+let btnDeletes = document.querySelectorAll('.btndelete');
 btnAdd.addEventListener('click', showDialog);
