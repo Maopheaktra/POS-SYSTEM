@@ -4,104 +4,44 @@
     padding: 0;
     box-sizing: border-box;
 }
-:root{
-    --blue: #2a2185;
-    --white:#fff;
-    --gray : #f5f5f5;
-    --black: #222;
-    --black2: #999;
-}
-body{
-    min-height: 100vh;
-    overflow: hidden;
 
+body {
+    height: 97vh;
+    display: grid;
+    place-items: center;
+    /* background: #181819; */
 }
-
-.container{
+button {
     position: relative;
-    width: 100%;
-}
-.navigation{
-    position: fixed;
-    width: 200px;
-    height: 100%;
-    background: var(--blue);
-    border-left:10px solid var(--blue);
-    transition: 0.5s;
+    padding: 15px 65px;
+    background: transparent;
+    border: 1px solid orange;
+    color: orange;
+    font-family: poppins;
+    font-size: 2.3em;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .5s;
     overflow: hidden;
 }
-.navigation ul{
+
+button:hover {
+    color: #fff;
+    filter: drop-shadow(0 0 25px orange);
+}
+button::after {
+    content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-}
-.navigation ul li{
-    position: relative;
-    width: 100%;
-    list-style: none;
-    
-}
-.navigation ul li:hover{
-    background: white;
-}
-.navigation ul li:nth-child(1){
-    margin-bottom: 40px;
-    pointer-events: none;
-}
-.navigation ul li a{
-    position: relative;
-    display: block;
-    width: 100%;
-    text-decoration: none;
-    color: var(--white);
-    display: flex;
-}
-.navigation ul li:hover a{
-    color: var(--blue);
-    
-}
-.navigation ul li .icon{
-    position: relative;
-    display: block;
-    min-width: 60px;
-    height: 60px;
-    line-height: 60px;
-    text-align: center;
-}
-.navigation ul li .icon ion-icon{
-    font-size: 1.75rem;
-}
-.navigation ul li a .title{
-    position: relative;
-    display: block;
-    padding: 0 10px;
-    height: 60px;
-    line-height: 60px;
-    text-align: start;
-    white-space: nowrap;
-}
-/* >>>>>>>main<<<<<<<<< */
-
-.main-home{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow-y: hidden;
+    top: 50%;
+    left: -70%;
+    transform: translate(-50%,-50%) skew(45deg);
+    height: 100%;
+    width: 120%;
+    background: orange;
+    transition: .3s;
+    z-index: -1;
 }
 
-
-.energy-drink > img{
-    width: 190px;
-    padding: 10px;
-    justify-content: center;
-}
-
-.fast-food > img{
-    width: 200px;
-    padding: 10px;
-}
-.snack > img{
-    width: 190px;
-    padding: 10px;
+button:hover::after {
+    transform: translate(50%,-50%) skew(45deg);
 }
