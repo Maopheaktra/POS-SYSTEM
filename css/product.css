@@ -118,6 +118,10 @@ body {
     flex-direction: column;
 }
 
+.group label{
+    margin-left: 20px;
+    font-size: 30px;
+}
 .group input {
     width: 70%;
     margin-right: 10px;
@@ -130,6 +134,11 @@ body {
     padding: 10px;
     margin-left: 10px;
     border-radius: 20px;
+}
+textarea{
+    width: 69%;
+    margin-left: 10px;
+    border-radius: 10px;
 }
 /* =========Stle on display product========== */
 .dis {
@@ -270,5 +279,30 @@ table thead tr th {
     border: none;
     padding: 5px;
     border-radius: 10px;
+    color: white;
+}
+/* =====button for add and cancel of product===== */
+.button{
+    width: 65%;
+    margin-left: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+button{
+    width: 50px;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 10px;
+}
+#Cancel{
+    display: flex;
+    justify-content: center;
+    background: red;
+    color: white;
+}
+#add{
+    background: green;
     color: white;
 }

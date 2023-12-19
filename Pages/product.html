@@ -50,7 +50,7 @@
                 </li>
 
                 <li id="menu">
-                    <a href="/Pages/order.html">
+                    <a href="/Pages/order.html">a
                         <span class="material-symbols-outlined">
                             shopping_bag
                         </span>
@@ -63,18 +63,25 @@
 
     <div class="content">
         <div class="group">
-            <input type="text" placeholder="Product" id="product">
+            <label for="product">Add Product</label>
+            <input type="text" placeholder="Product" id="product-select">
             <div class="group-select">
                 <select id="product-name">
-                    <option value="">Select Product Name</option>
-                    <option value="product">Coca cola</option>
-                    <option value="product">Noodle</option>
-                    <option value="product">Milky Ta</option>
+                    <option value="">Select Product Categories</option>
+                    <option value="product">Energy Drink</option>
+                    <option value="product">Candy</option>
+                    <option value="product">Snack</option>
+                    <option value="product">Fast</option>
                 </select>
             </div>
-            <input type="text" placeholder="quantity">
-            <input type="text" placeholder="Net Price">
-            <input type="text" placeholder="Gross Price">
+            <input type="text" placeholder="quantity" id="qty"/>
+            <input type="text" placeholder="Price" id="price"/>
+            <textarea name="" id="" cols="30" rows="10" placeholder="Discription"></textarea>
+            <!-- <input type="text" placeholder="Gross Price" id="gross-price"/> -->
+            <div class="button">
+                <button type="submit" id="Cancel">Cancel</button>
+                <button type="submit" id="add">Add</button>
+            </div>
         </div>
         <div class="dis">
             <div class="group-add">
