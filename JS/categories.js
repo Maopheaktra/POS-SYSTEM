@@ -62,6 +62,10 @@ function add_category() {
     discription_name.value = ""
 
 }
+function clearInput(){
+    categoriesName.value = ""
+    discription_name.value = ""
+}
 function Show_addCategories() {
     hide(adddialog);
     let tbody = document.querySelector('tbody');
@@ -108,11 +112,8 @@ function Show_addCategories() {
         tbody.appendChild(tableRow);
     }
     saveCategories();
+    // clearInput();
     console.log(2);
-}
-function clearInput(){
-    name.value = ""
-    Discription.value = ""
 }
 function onCreate() {
     hide(adddialog);
