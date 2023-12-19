@@ -63,30 +63,26 @@
     </div>
 
     <div class="content">
-        <div class="group">
-            <label for="product">Add Product</label>
-            <input type="text" placeholder="Product" id="product-select">
-            <div class="group-select">
-                <select id="product-name">
-                    <option value="">Select Product Categories</option>
-                    <option value="product">Energy Drink</option>
-                    <option value="product">Candy</option>
-                    <option value="product">Snack</option>
-                    <option value="product">Fast</option>
-                </select>
-            </div>
-            <input type="text" placeholder="quantity" id="qty"/>
-            <input type="text" placeholder="Price" id="price"/>
-            <textarea name="" id="" cols="30" rows="10" placeholder="Discription"></textarea>
-            <!-- <input type="text" placeholder="Gross Price" id="gross-price"/> -->
-            <div class="button">
-                <button type="submit" id="Cancel">Cancel</button>
-                <button type="submit" id="add">Add</button>
-            </div>
+        <div id="add-dialog" style="display: none;">
+            <!-- <button type="submit">Add Categories</button> -->
+            <dialog open>
+                <header>Add New Categories</header>
+                <section>
+                    <label for="title">Name</label>
+                    <input id="title" type="text" class="category_name" placeholder="Categories Name" />
+    
+                    <textarea name="" id="" cols="30" rows="10" placeholder="Description" class="discription"></textarea>
+                </section>
+    
+                <menu>
+                    <button onclick="onCancel()">Cancel</button>
+                    <button onclick="add_category()">Create</button>
+                </menu>
+            </dialog>
         </div>
         <div class="dis">
             <div class="group-add">
-                <button type="submit">Add Product</button>
+                <button class="add">Add Product</button>
                 <div class="filter-product">
                     <label>Filter product:</label>
                     <select name="" id="product">
