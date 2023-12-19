@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
+    <link rel="icon" type="image/x-icon" href="../Images/pos.png">
     <link rel="stylesheet"href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="../css/product.css">
     <script src="../JS/product.js" defer></script>
@@ -63,18 +64,25 @@
 
     <div class="content">
         <div class="group">
-            <input type="text" placeholder="Product" id="product">
+            <label for="product">Add Product</label>
+            <input type="text" placeholder="Product" id="product-select">
             <div class="group-select">
                 <select id="product-name">
-                    <option value="">Select Product Name</option>
-                    <option value="product">Coca cola</option>
-                    <option value="product">Noodle</option>
-                    <option value="product">Milky Ta</option>
+                    <option value="">Select Product Categories</option>
+                    <option value="product">Energy Drink</option>
+                    <option value="product">Candy</option>
+                    <option value="product">Snack</option>
+                    <option value="product">Fast</option>
                 </select>
             </div>
-            <input type="text" placeholder="quantity">
-            <input type="text" placeholder="Net Price">
-            <input type="text" placeholder="Gross Price">
+            <input type="text" placeholder="quantity" id="qty"/>
+            <input type="text" placeholder="Price" id="price"/>
+            <textarea name="" id="" cols="30" rows="10" placeholder="Discription"></textarea>
+            <!-- <input type="text" placeholder="Gross Price" id="gross-price"/> -->
+            <div class="button">
+                <button type="submit" id="Cancel">Cancel</button>
+                <button type="submit" id="add">Add</button>
+            </div>
         </div>
         <div class="dis">
             <div class="group-add">

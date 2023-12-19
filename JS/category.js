@@ -6,10 +6,14 @@ let adddialog = document.querySelector('#add-dialog');
 let categoriesName = document.querySelector(".category_name");
 let discription_name = document.querySelector(".discription");
 let btnAdd = document.querySelector('.Add');
-display_table.appendChild(table)
+// display_table.appendChild(table)
 // console.log(adddialog);
-// let btnAdd = document.querySelector('.Add');
-// console.log(btnAdd);
+// Data --------------------------------------
+let categories = [];
+let Unique_Id = 0;
+
+// set categories to string and save to local storage by using key "categories"
+// Hide a given element
 function hide(element) {
     element.style.display = "none";
 }
@@ -18,33 +22,37 @@ function hide(element) {
 function show(element) {
     element.style.display = "block";
 }
-
+// Local Storage ------------------------------------
 function saveCategories() {
     localStorage.setItem("categorie", JSON.stringify(categories));
     localStorage.setItem("Id", JSON.stringify(Unique_Id));
 }
 function getCategories() {
-    // Local Storage ------------------------------------
     let categoriesStorage = JSON.parse(localStorage.getItem("categorie"));
     let CategoriesID = JSON.parse(localStorage.getItem("Id"));
     if (categoriesStorage != undefined) {
         categories = categoriesStorage;
         Unique_Id = CategoriesID;
-    } else {
+    }else{
         saveCategories();
     }
-    Show_addCategories()
 }
-// Data --------------------------------------
-let categories = [];
-let Unique_Id = 0;
+    // function onCreate(){
+    //     show(adddialog);
 
-function showDialog() {
-    show(adddialog);
-}
-function add_category() {
-    console.log(1);
-    Unique_Id = Unique_Id + 1;
+    //     // create document
+    //     document.querySelector('menu').lastElementChild.textContent = "create";
+    // }
+
+// get question from local storage
+function add_category(){
+    // event.preventDefault();
+    // adddialog.style.display = 'block';
+    hide(adddialog);
+    if (categories == null) {
+        return alert("please add it first!!")
+    }
+    Unique_Id =Unique_Id + 1;
     let category = {
         id: Unique_Id,
         name: categoriesName.value,
@@ -52,22 +60,23 @@ function add_category() {
     }
     categories.push(category);
     // clear input file
+    categoriesName.value = "";
+    discription_name.value = "";
     saveCategories();
-    // getCategories();
-    Show_addCategories()
-    // onCreate()
-    // createRowCategories();    
-    clearInput()
-    categoriesName.value = ""
-    discription_name.value = ""
-
+    getCategories();
+    Show_addCategories();
+    // clear()
+    window.location.reload();
 }
-function clearInput(){
-    categoriesName.value = ""
-    discription_name.value = ""
-}
+btnAdd.addEventListener('click',add_category);
+// function onCreate(event){
+//     if (event.target.textContent == "create") {
+        
+//     }
+// }
+// create categories with click and edit
 function Show_addCategories() {
-    hide(adddialog);
+    // hide(adddialog);
     let tbody = document.querySelector('tbody');
     let trs = document.querySelectorAll('tbody tr');
     for (const tr of trs) {
@@ -79,50 +88,41 @@ function Show_addCategories() {
         //  create td element by using "tdId"
         let tdId = document.createElement('td')
         tdId.textContent = categories[index].id;
-
         // console.log(tdId);
         // create td element by usinh "tdName";
         let tdName = document.createElement('td');
         tdName.textContent = categories[index].name;
-
         // create td element by using "tdAction"
         let tdAction = document.createElement('td');
         tdAction.className = "action"
-
         // create button "edit" and "delete" 
         let btnDelete = document.createElement('button');
-        btnDelete.setAttribute('class','delete');
+        btnDelete.className = "delete";
         btnDelete.textContent = "DELETE"
-
+        // btnDelete.addEventListener('click',deleteCategory);
+        // btnDelete. = "Delete";
 
         // create button "edit" to edit the row;
         let btnEdit = document.createElement('button');
         btnEdit.className = "Edit";
         btnEdit.textContent = "EDIT"
-
-
+        // btnEdit.addEventListener('click',editCategories);
+        // add btn to tdAction
         tdAction.appendChild(btnDelete);
         tdAction.appendChild(btnEdit);
         // add all td to tbody
-
         tableRow.appendChild(tdId);
         tableRow.appendChild(tdName);
         tableRow.appendChild(tdAction);
-
         tbody.appendChild(tableRow);
     }
-    saveCategories();
-    // clearInput();
-    console.log(2);
-    // DeleteList();
+    // console.log(tbody);
+    // table.appendChild(tbody)
+    add_category();
+    // saveCategories();
+    // getCategories();
 }
-function onCreate() {
-    hide(adddialog);
-    console.log(1);
 
-}
-function onCancel() {
-    adddialog.style.display = "none";
-}
 getCategories();
-btnAdd.addEventListener('click', showDialog);
+Show_addCategories();
+// localStorage.clear();
