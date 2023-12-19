@@ -1,6 +1,5 @@
 let disTable = document.querySelector('.g');
 let table = document.querySelector('table');
-<<<<<<< HEAD
 // let thead = document.createElement('thead');
 // let tr = document.createElement('tr');
 // let thId = document.createElement('th');
@@ -24,9 +23,7 @@ let table = document.querySelector('table');
 // tr.appendChild(thAction)
 // console.log(table);
 
-=======
 let products = [];
->>>>>>> Display-categories
 disTable.appendChild(table)
 
 // create new product and add product to product list 
