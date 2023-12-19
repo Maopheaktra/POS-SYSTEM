@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order</title>
-    <link rel="stylesheet" href="../css/order.css">
+    <title>Category</title>
+    <link rel="stylesheet" href="../css/categories.css">
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <script src="../JS/categories.js" defer></script>
 </head>
+
 <body>
+
     <!-- =============Navigation========== -->
     <div class="container">
         <div class="navigation">
             <ul>
-                <li>
+                <li id="logo">
                     <a href="">
                         <span class="icon">
                             <ion-icon name="cart-outline"></ion-icon>
@@ -19,35 +24,35 @@
                         <span class="title">POS System</span>
                     </a>
                 </li>
-                <li>
-                    <a href="/dashboard.html">
-                        <span class="icon">
-                            <ion-icon name="grid-outline"></ion-icon>
-                        </span>
+                <li id="menu">
+                    <a href="/Pages/dashboard.html">
+                        <span class="material-symbols-outlined">shopping_cart</span>
                         <span class="title">Dashboard</span>
                     </a>
                 </li>
-                <li>
+                <li id="menu">
                     <a href="/Pages/product.html">
-                        <span class="icon">
-                            <ion-icon name="cart-outline"></ion-icon>
+                        <span class="material-symbols-outlined">
+                            grocery
                         </span>
                         <span class="title">Products</span>
                     </a>
                 </li>
-                <li>
+                <li id="menu">
                     <a href="/Pages/categories.html">
                         <span class="icon">
-                            <ion-icon name="apps-outline"></ion-icon>
+                            <span class="material-symbols-outlined">
+                                category
+                            </span>
                         </span>
                         <span class="title">Categorie</span>
                     </a>
                 </li>
 
-                <li>
+                <li id="menu">
                     <a href="/Pages/order.html">
-                        <span class="icon">
-                            <ion-icon name="cart-outline"></ion-icon>
+                        <span class="material-symbols-outlined">
+                            shopping_bag
                         </span>
                         <span class="title">Order</span>
                     </a>
@@ -55,12 +60,69 @@
             </ul>
         </div>
     </div>
-</body>
-<script src="/JS/dashboard.js"></script>
-<!-- ====icon icons=== -->
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-</html>
+    <div class="content">
+        <div id="add-dialog" style="display: block;">
+            <!-- <button type="submit">Add Categories</button> -->
+            <dialog open>
+                <header>Add New Categories</header>
+                <section>
+                    <label for="title">Name</label>
+                    <input id="title" type="text" class="category_name" placeholder="Categories Name" />
+    
+                    <textarea name="" id="" cols="30" rows="10" placeholder="Description" class="discription"></textarea>
+                </section>
+    
+                <menu>
+                    <button onclick="onCancel()">Cancel</button>
+                    <button onclick="onCreate()">Create</button>
+                </menu>
+            </dialog>
+        </div>
+        <div class="dis">
+            <div class="group-add">
+                <button onclick="addcategory()" class="Add" >Add Category</button>
+                <div class="filter-product">
+                    <label>Filter Categories:</label>
+                    <select name="" id="product">
+                        <option value="">All Categories</option>
+                        <option value="">Coca cola</option>
+                        <option value="">Milky Ta</option>
+                        <option value="">Red bull</option>
+                        <option value="">Indomies</option>
+                    </select>
+                </div>
+                <div class="search">
+                    <input type="text" placeholder="Search product by Category Name">
+                    <button type="submit">Search</button>
+                </div>
+            </div>
+            <div class="g">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Categories ID</th>
+                            <th>Categorie Name</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr> -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+<!-- <script src="../JS/categories.js"></script> -->
 </body>
+
 </html>
