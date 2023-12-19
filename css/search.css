@@ -1,0 +1,32 @@
+* {
+   
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    list-style: none;
+    border:none;
+    /* background:rgb(208, 200, 200); */
+}
+.container{
+    width: 35%;
+    margin: 0 auto;
+    margin-top: 100px;
+    padding: 50px;
+    border-radius:10px;
+    background:teal;
+    color: white;
+}
+.header {
+    display: flex;
+    margin-bottom: 30px;
+    
+}
+input {
+    width: 100%;
+    padding: 10px;
+    border:1px solid white;
+}
+li {
+    border:1px solid white;
+    padding: 10px;
+}
