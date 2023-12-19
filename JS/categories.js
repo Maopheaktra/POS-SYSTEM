@@ -87,7 +87,7 @@ function Show_addCategories() {
 
         // create button "edit" and "delete" 
         let btnDelete = document.createElement('button');
-        btnDelete.className = "delete";
+        btnDelete.setAttribute('class','delete');
         btnDelete.textContent = "DELETE"
 
 
@@ -109,6 +109,7 @@ function Show_addCategories() {
     }
     saveCategories();
     console.log(2);
+    // DeleteList();
 }
 function clearInput(){
     name.value = ""
@@ -123,5 +124,4 @@ function onCancel() {
     adddialog.style.display = "none";
 }
 getCategories();
-let btnDeletes = document.querySelectorAll('.btndelete');
 btnAdd.addEventListener('click', showDialog);
