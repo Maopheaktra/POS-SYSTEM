@@ -8,8 +8,12 @@ let discription_name = document.querySelector(".discription");
 let btnAdd = document.querySelector('.Add');
 // display_table.appendChild(table)
 // console.log(adddialog);
-// let btnAdd = document.querySelector('.Add');
-// console.log(btnAdd);
+// Data --------------------------------------
+let categories = [];
+let Unique_Id = 0;
+
+// set categories to string and save to local storage by using key "categories"
+// Hide a given element
 function hide(element) {
     element.style.display = "none";
 }
@@ -18,39 +22,37 @@ function hide(element) {
 function show(element) {
     element.style.display = "block";
 }
-
+// Local Storage ------------------------------------
 function saveCategories() {
     localStorage.setItem("categorie", JSON.stringify(categories));
     localStorage.setItem("Id", JSON.stringify(Unique_Id));
 }
 function getCategories() {
-    // Local Storage ------------------------------------
     let categoriesStorage = JSON.parse(localStorage.getItem("categorie"));
     let CategoriesID = JSON.parse(localStorage.getItem("Id"));
     if (categoriesStorage != undefined) {
         categories = categoriesStorage;
         Unique_Id = CategoriesID;
-    } else {
+    }else{
         saveCategories();
     }
 }
-// Data --------------------------------------
-let categories = [];
-let Unique_Id = 0;
-// set categories to string and save to local storage by using key "categories"
-// Hide a given element/
-//     // show(adddialog);
-//     console.log(1);
-// }
-// Create function to addcategory 
+    // function onCreate(){
+    //     show(adddialog);
+
+    //     // create document
+    //     document.querySelector('menu').lastElementChild.textContent = "create";
+    // }
+
 // get question from local storage
-btnAdd.addEventListener('click', onCreate);
-console.log(btnAdd);
-function add_category() {
+function add_category(){
     // event.preventDefault();
     // adddialog.style.display = 'block';
     hide(adddialog);
-    Unique_Id = Unique_Id + 1;
+    if (categories == null) {
+        return alert("please add it first!!")
+    }
+    Unique_Id =Unique_Id + 1;
     let category = {
         id: Unique_Id,
         name: categoriesName.value,
@@ -58,14 +60,23 @@ function add_category() {
     }
     categories.push(category);
     // clear input file
+    categoriesName.value = "";
+    discription_name.value = "";
     saveCategories();
     getCategories();
-    // createRowCategories();    
+    Show_addCategories();
     // clear()
     window.location.reload();
 }
-function onCreate(){
-    hide(adddialog);
+btnAdd.addEventListener('click',add_category);
+// function onCreate(event){
+//     if (event.target.textContent == "create") {
+        
+//     }
+// }
+// create categories with click and edit
+function Show_addCategories() {
+    // hide(adddialog);
     let tbody = document.querySelector('tbody');
     let trs = document.querySelectorAll('tbody tr');
     for (const tr of trs) {
@@ -90,7 +101,7 @@ function onCreate(){
         btnDelete.textContent = "DELETE"
         // btnDelete.addEventListener('click',deleteCategory);
         // btnDelete. = "Delete";
-    
+
         // create button "edit" to edit the row;
         let btnEdit = document.createElement('button');
         btnEdit.className = "Edit";
@@ -105,23 +116,13 @@ function onCreate(){
         tableRow.appendChild(tdAction);
         tbody.appendChild(tableRow);
     }
-    // console.log(1);
     // console.log(tbody);
     // table.appendChild(tbody)
     add_category();
-    saveCategories();
-    getCategories();
-    
+    // saveCategories();
+    // getCategories();
 }
-function onCancel(){
-    adddialog.style.display = "none";
-}
-// create categories with click and edit
-// function createRowCategories() {
-    
-//     // hide(adddialog);
-// }
-// for (const cate of categ) {
-//     createRowCategories(cate);
-// }
-// Show_addCategories();
+
+getCategories();
+Show_addCategories();
+// localStorage.clear();

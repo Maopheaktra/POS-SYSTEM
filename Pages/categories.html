@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Category</title>
-    <link rel="stylesheet"href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="../css/categories.css">
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <script src="../JS/categories.js" defer></script>
 </head>
 
@@ -62,7 +62,7 @@
     </div>
 
     <div class="content">
-        <div id="add-dialog" style="display: none;">
+        <div id="add-dialog" style="display: block;">
             <!-- <button type="submit">Add Categories</button> -->
             <dialog open>
                 <header>Add New Categories</header>
@@ -75,13 +75,13 @@
     
                 <menu>
                     <button onclick="onCancel()">Cancel</button>
-                    <button onclick="onCreate(event)">Create</button>
+                    <button onclick="onCreate()">Create</button>
                 </menu>
             </dialog>
         </div>
         <div class="dis">
             <div class="group-add">
-                <button type="submit" class="Add" >Add Category</button>
+                <button onclick="addcategory()" class="Add" >Add Category</button>
                 <div class="filter-product">
                     <label>Filter Categories:</label>
                     <select name="" id="product">
@@ -122,6 +122,7 @@
             </div>
         </div>
     </div>
+<!-- <script src="../JS/categories.js"></script> -->
 </body>
 
 </html>
