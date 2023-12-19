@@ -43,7 +43,7 @@ function showDialog() {
 }
 function add_category() {
     console.log(1);
-    Unique_Id = Unique_Id+ 1;
+    Unique_Id = Unique_Id + 1;
     let category = {
         id: Unique_Id,
         name: categoriesName.value,
@@ -52,11 +52,13 @@ function add_category() {
     categories.push(category);
     // clear input file
     saveCategories();
-    getCategories();
+    // getCategories();
     Show_addCategories()
     // onCreate()
     // createRowCategories();    
-    // clear()
+    clearInput()
+    categoriesName.value = ""
+    discription_name.value = ""
 
 }
 function Show_addCategories() {
@@ -87,7 +89,7 @@ function Show_addCategories() {
         btnDelete.className = "delete";
         btnDelete.textContent = "DELETE"
 
-    
+
         // create button "edit" to edit the row;
         let btnEdit = document.createElement('button');
         btnEdit.className = "Edit";
@@ -108,6 +110,10 @@ function Show_addCategories() {
     getCategories();
     console.log(2);
 }
+function clearInput(){
+    name.value = ""
+    Discription.value = ""
+}
 function onCreate() {
     hide(adddialog);
     console.log(1);
@@ -116,4 +122,4 @@ function onCreate() {
 function onCancel() {
     adddialog.style.display = "none";
 }
-btnAdd.addEventListener('click',showDialog);
+btnAdd.addEventListener('click', showDialog);
