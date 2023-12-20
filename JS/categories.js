@@ -136,6 +136,7 @@ function onCancel() {
     adddialog.style.display = "none";
 }
 getCategories();
+
 btnAdd.addEventListener('click', showDialog);
 let btnDeletes = document.querySelectorAll('.btndelete');
 btnAdd.addEventListener('click', showDialog);

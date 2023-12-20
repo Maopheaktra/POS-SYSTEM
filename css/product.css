@@ -362,6 +362,11 @@ dialog menu button:nth-child(1){
     padding: 10px;
     border-radius: 20px;
 }
+#categories{
+    widows: 90%;
+    padding: 10px;
+    border-radius: 20px;
+}
 dialog menu button:nth-child(2){
     background: green;
     color: white;
