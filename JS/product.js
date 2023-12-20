@@ -46,13 +46,12 @@ function showDialog() {
     show(adddialog);
 }
 function add_Products() {
-    console.log(1);
     Unique_Id = Unique_Id + 1;
     let Product = {
         id: Unique_Id,
-        name: ProductsName.value,
+        name : ProductsName.value,
         quantity: quantity.value,
-        price: price.value,
+        price : price.value,
         Categories: Categories.value
     }
     Products.push(Product);
@@ -140,8 +139,8 @@ function Show_addProducts() {
         tableRow.appendChild(tdId);
         tableRow.appendChild(tdName);
         tableRow.appendChild(tdQuantity);
-        tableRow.appendChild(tdCategories)
         tableRow.appendChild(tdPrice);
+        tableRow.appendChild(tdCategories) 
         tableRow.appendChild(tdAction);
 
         tbody.appendChild(tableRow);
@@ -152,26 +151,23 @@ function Show_addProducts() {
     // DeleteList();
 }
 function updateProduct(id) {
-    console.log(Products);
-    Products[id].ProductsName = document.getElementById("product-name").value;
+
+    Products[id].name = document.getElementById("product-name").value;
     Products[id].quantity = document.getElementById("qty").value;
     Products[id].Categories = document.getElementById("categories").value;
     Products[id].price = document.getElementById("price").value;
-    Products[id].discription_name = document.getElementsByClassName("discription").value;
-    // console.log(Products[id].Categories);
+    saveProducts();
+    Show_addProducts();
 }
 function editProduct(event) {
     let tr = event.target.closest('tr');
     let id = event.target.dataset.index;
-    document.getElementById("product-name").value = Products[id].ProductsName;
     document.getElementById("qty").value = Products[id].quantity ;
     document.getElementById("categories").value = Products[id].Categories;
      document.getElementById("price").value = Products[id].price;
-     document.getElementsByClassName("discription").value = Products[id].discription_name;
     document.getElementById("add").textContent = "Edit";
     document.getElementById("add").setAttribute("onclick", `updateProduct(${id})`);
     showDialog()
-    updateProduct()
     saveProducts()
 }
 function deleteProducts(event) {
