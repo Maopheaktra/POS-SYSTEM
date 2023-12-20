@@ -62,7 +62,7 @@ function add_category() {
     discription_name.value = ""
 
 }
-function clearInput(){
+function clearInput() {
     categoriesName.value = ""
     discription_name.value = ""
 }
@@ -91,7 +91,7 @@ function Show_addCategories() {
 
         // create button "edit" and "delete" 
         let btnDelete = document.createElement('button');
-        btnDelete.setAttribute('class','delete');
+        btnDelete.setAttribute('class', 'delete');
         btnDelete.textContent = "DELETE"
         btnDelete.addEventListener('click',deleteCategories)
 
@@ -99,7 +99,7 @@ function Show_addCategories() {
         let btnEdit = document.createElement('button');
         btnEdit.className = "Edit";
         btnEdit.textContent = "EDIT"
-
+        btnDelete.addEventListener('click',editCategories)
 
         tdAction.appendChild(btnDelete);
         tdAction.appendChild(btnEdit);
@@ -116,11 +116,29 @@ function Show_addCategories() {
     console.log(2);
     // DeleteList();
 }
+function updateCategories(id) {
+    console.log(categories);
+    categories[id].name = document.getElementsByClassName("categorie_name").value;
+    categories[id].discription_name = document.getElementsByClassName("discription").value;
+    // console.log(categories[id].Categories);
+}
+function editCategories(event) {
+    let tr = event.target.closest('tr');
+    console.log(tr);
+    let id = event.target.dataset.index;
+    document.getElementsByClassName("categorie_name").value = categories[id].name;
+    document.getElementsByClassName("discription").value = categories[id].discription_name;
+    document.getElementById("add").textContent = "Edit";
+    document.getElementById("add").setAttribute("onclick", `updateCategories(${id})`);
+    showDialog()
+    updateCategories()
+    saveCategories()
+}
 function deleteCategories(event) {
     let tr = event.target.closest('tr');
     let isconfirm = "Are you sure to delete it?"
     if (isconfirm) {
-        categories.splice(tr,1)
+        categories.splice(tr, 1)
     }
     saveCategories()
     getCategories()
