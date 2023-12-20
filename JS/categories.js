@@ -98,6 +98,7 @@ function Show_addCategories() {
         // create button "edit" to edit the row;
         let btnEdit = document.createElement('button');
         btnEdit.className = "Edit";
+        btnEdit.dataset.index = index;
         btnEdit.textContent = "EDIT"
         btnDelete.addEventListener('click',editCategories)
 
@@ -113,26 +114,21 @@ function Show_addCategories() {
     }
     saveCategories();
     // clearInput();
-    console.log(2);
+    // console.log(2);
     // DeleteList();
 }
 function updateCategories(id) {
-    console.log(categories);
-    categories[id].name = document.getElementsByClassName("categorie_name").value;
-    categories[id].discription_name = document.getElementsByClassName("discription").value;
-    // console.log(categories[id].Categories);
+    categories[id].name = document.getElementsByClassName('category_name').value;
+    saveCategories();
+    Show_addCategories();
+    console.log(id);
 }
 function editCategories(event) {
     let tr = event.target.closest('tr');
-    console.log(tr);
-    let id = event.target.dataset.index;
-    document.getElementsByClassName("categorie_name").value = categories[id].name;
-    document.getElementsByClassName("discription").value = categories[id].discription_name;
-    document.getElementById("add").textContent = "Edit";
-    document.getElementById("add").setAttribute("onclick", `updateCategories(${id})`);
-    showDialog()
-    updateCategories()
-    saveCategories()
+    let id = event.target.da.index;
+    document.getElementsByClassName('category_name').value = categories[id].name;
+    showDialog();
+    saveCategories();
 }
 function deleteCategories(event) {
     let tr = event.target.closest('tr');
@@ -155,6 +151,4 @@ function onCancel() {
 }
 getCategories();
 
-btnAdd.addEventListener('click', showDialog);
-let btnDeletes = document.querySelectorAll('.btndelete');
 btnAdd.addEventListener('click', showDialog);

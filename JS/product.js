@@ -49,9 +49,9 @@ function add_Products() {
     Unique_Id = Unique_Id + 1;
     let Product = {
         id: Unique_Id,
-        name : ProductsName.value,
+        name: ProductsName.value,
         quantity: quantity.value,
-        price : price.value,
+        price: price.value,
         Categories: Categories.value
     }
     Products.push(Product);
@@ -140,7 +140,7 @@ function Show_addProducts() {
         tableRow.appendChild(tdName);
         tableRow.appendChild(tdQuantity);
         tableRow.appendChild(tdPrice);
-        tableRow.appendChild(tdCategories) 
+        tableRow.appendChild(tdCategories)
         tableRow.appendChild(tdAction);
 
         tbody.appendChild(tableRow);
@@ -151,7 +151,7 @@ function Show_addProducts() {
     // DeleteList();
 }
 function updateProduct(id) {
-
+    console.log(id);
     Products[id].name = document.getElementById("product-name").value;
     Products[id].quantity = document.getElementById("qty").value;
     Products[id].Categories = document.getElementById("categories").value;
@@ -162,9 +162,9 @@ function updateProduct(id) {
 function editProduct(event) {
     let tr = event.target.closest('tr');
     let id = event.target.dataset.index;
-    document.getElementById("qty").value = Products[id].quantity ;
+    document.getElementById("qty").value = Products[id].quantity;
     document.getElementById("categories").value = Products[id].Categories;
-     document.getElementById("price").value = Products[id].price;
+    document.getElementById("price").value = Products[id].price;
     document.getElementById("add").textContent = "Edit";
     document.getElementById("add").setAttribute("onclick", `updateProduct(${id})`);
     showDialog()
