@@ -7,6 +7,7 @@ let ProductsName = document.querySelector("#product-name");
 let discription_name = document.querySelector(".discription");
 let quantity = document.querySelector('#qty');
 let price = document.querySelector('#price');
+let Categories = document.querySelector('#categories');
 let btnAdd = document.querySelector('.Add');
 display_table.appendChild(table)
 // console.log(adddialog);
@@ -52,6 +53,7 @@ function add_Products() {
         name: ProductsName.value,
         quantity: quantity.value,
         price: price.value,
+        Categories: Categories.value
     }
     Products.push(Product);
     // clear input file
@@ -65,10 +67,14 @@ function add_Products() {
     discription_name.value = ""
     price.value = ""
     quantity.value = ""
+    Categories.value = ""
 }
-function clearInput(){
+function clearInput() {
     ProductsName.value = ""
     discription_name.value = ""
+    price.value = ""
+    quantity.value = ""
+    Categories.value = ""
 }
 function Show_addProducts() {
     hide(adddialog);
@@ -88,13 +94,13 @@ function Show_addProducts() {
         // create td element by usinh "tdName";
         let tdName = document.createElement('td');
         tdName.textContent = Products[index].name;
-        
+
         // create td element by using "tdQuantity"
         let tdQuantity = document.createElement('td');
         tdQuantity.textContent = Products[index].quantity;
         // create Input element as "qtyInput"
         const qtyInput = document.createElement('input');
-        
+
         // add attribute type input to number
         qtyInput.setAttribute('type', 'number');
         // add value to input from product quantity
@@ -106,17 +112,20 @@ function Show_addProducts() {
         let tdAction = document.createElement('td');
         tdAction.className = "action"
 
+        let tdCategories = document.createElement('td');
+        tdCategories.textContent = Products[index].Categories;
         // create button "edit" and "delete" 
         let btnDelete = document.createElement('button');
-        btnDelete.setAttribute('class','delete');
+        btnDelete.setAttribute('class', 'delete');
         btnDelete.textContent = "DELETE"
-
+        btnDelete.addEventListener('click', deleteProducts)
 
         // create button "edit" to edit the row;
         let btnEdit = document.createElement('button');
         btnEdit.className = "Edit";
         btnEdit.textContent = "EDIT"
-
+        btnEdit.dataset.index = index;
+        btnEdit.addEventListener('click', editProduct)
         // create button "edit" to edit the row;
         let btnView = document.createElement('button');
         btnView.className = "View";
@@ -131,15 +140,47 @@ function Show_addProducts() {
         tableRow.appendChild(tdId);
         tableRow.appendChild(tdName);
         tableRow.appendChild(tdQuantity);
+        tableRow.appendChild(tdCategories)
         tableRow.appendChild(tdPrice);
         tableRow.appendChild(tdAction);
 
         tbody.appendChild(tableRow);
     }
     saveProducts();
-    // clearInput();
-    console.log(2);
+    // // clearInput();
+    // console.log(2);
     // DeleteList();
+}
+function updateProduct(id) {
+    console.log(Products);
+    Products[id].ProductsName = document.getElementById("product-name").value;
+    Products[id].quantity = document.getElementById("qty").value;
+    Products[id].Categories = document.getElementById("categories").value;
+    Products[id].price = document.getElementById("price").value;
+    Products[id].discription_name = document.getElementsByClassName("discription").value;
+    // console.log(Products[id].Categories);
+}
+function editProduct(event) {
+    let tr = event.target.closest('tr');
+    let id = event.target.dataset.index;
+    document.getElementById("product-name").value = Products[id].ProductsName;
+    document.getElementById("qty").value = Products[id].quantity ;
+    document.getElementById("categories").value = Products[id].Categories;
+     document.getElementById("price").value = Products[id].price;
+     document.getElementsByClassName("discription").value = Products[id].discription_name;
+    document.getElementById("add").textContent = "Edit";
+    document.getElementById("add").setAttribute("onclick", `updateProduct(${id})`);
+    showDialog()
+    updateProduct()
+    saveProducts()
+}
+function deleteProducts(event) {
+    let tr = event.target.closest('tr')
+    Products.splice(tr, 1)
+    saveProducts()
+    getProducts()
+    Show_addProducts()
+    // window.location.reload()
 }
 function onCreate() {
     hide(adddialog);
