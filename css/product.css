@@ -216,7 +216,9 @@ textarea{
 /* ====Table===== */
 .g {
     width: 100%;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 table {
@@ -257,7 +259,8 @@ table thead tr th {
     border: 1px solid white;
 }
 
-#delete {
+.delete {
+    width: 20%;
     background: red;
     border: none;
     padding: 5px;
@@ -265,7 +268,7 @@ table thead tr th {
     color: white;
 }
 
-#edit {
+.Edit {
     background: greenyellow;
     border: none;
     padding: 5px;
@@ -274,7 +277,7 @@ table thead tr th {
     color: white;
 }
 
-#view {
+.View {
     background: blue;
     border: none;
     padding: 5px;
@@ -303,6 +306,63 @@ button{
     color: white;
 }
 #add{
+    background: green;
+    color: white;
+}
+/* --------Create style on dialog */
+dialog{
+    width: 25%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border: none;
+}
+dialog header{
+    text-align: center;
+    font-size: 20px;
+}
+dialog input{
+    width: 90%;
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid grey;
+    margin: 10px;
+}
+dialog textarea{
+    width: 90%;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+dialog menu{
+    display: flex;
+    justify-content: space-between;
+}
+dialog menu button{
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+}
+dialog menu button:nth-child(1){
+    background: red;
+    color: white;
+}
+#product-name{
+    width: 90%;
+    padding: 10px;
+    border-radius: 20px;
+}
+#qty{
+    width: 90%;
+    padding: 10px;
+    border-radius: 20px;
+}
+#price{
+    width: 90%;
+    padding: 10px;
+    border-radius: 20px;
+}
+dialog menu button:nth-child(2){
     background: green;
     color: white;
 }

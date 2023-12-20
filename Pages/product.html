@@ -63,26 +63,28 @@
     </div>
 
     <div class="content">
-        <div id="add-dialog" style="display: none;">
+        <div id="add-dialog" style="display: block;">
             <!-- <button type="submit">Add Categories</button> -->
             <dialog open>
-                <header>Add New Categories</header>
+                <header>Add New Product</header>
                 <section>
-                    <label for="title">Name</label>
-                    <input id="title" type="text" class="category_name" placeholder="Categories Name" />
+                    <input type="text" placeholder="Product Name" id="product-name"><br>
+                    <input type="number" placeholder="Quantity" id="qty"><br>
+                    <input type="number" placeholder="Price" id="price"><br>
+                    <!-- <button>Add Product</button> -->
     
                     <textarea name="" id="" cols="30" rows="10" placeholder="Description" class="discription"></textarea>
                 </section>
-    
+
                 <menu>
                     <button onclick="onCancel()">Cancel</button>
-                    <button onclick="add_category()">Create</button>
+                    <button onclick="add_Products()">Create</button>
                 </menu>
             </dialog>
         </div>
         <div class="dis">
             <div class="group-add">
-                <button class="add">Add Product</button>
+                <button class="Add">Add Product</button>
                 <div class="filter-product">
                     <label>Filter product:</label>
                     <select name="" id="product">
