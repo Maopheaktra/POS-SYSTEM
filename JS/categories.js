@@ -93,7 +93,7 @@ function Show_addCategories() {
         let btnDelete = document.createElement('button');
         btnDelete.setAttribute('class','delete');
         btnDelete.textContent = "DELETE"
-
+        btnDelete.addEventListener('click',deleteCategories)
 
         // create button "edit" to edit the row;
         let btnEdit = document.createElement('button');
@@ -116,6 +116,17 @@ function Show_addCategories() {
     console.log(2);
     // DeleteList();
 }
+function deleteCategories(event) {
+    let tr = event.target.closest('tr');
+    let isconfirm = "Are you sure to delete it?"
+    if (isconfirm) {
+        categories.splice(tr,1)
+    }
+    saveCategories()
+    getCategories()
+    Show_addCategories()
+    // window.location.reload()
+}
 function onCreate() {
     hide(adddialog);
     console.log(1);
@@ -125,4 +136,6 @@ function onCancel() {
     adddialog.style.display = "none";
 }
 getCategories();
+btnAdd.addEventListener('click', showDialog);
+let btnDeletes = document.querySelectorAll('.btndelete');
 btnAdd.addEventListener('click', showDialog);
