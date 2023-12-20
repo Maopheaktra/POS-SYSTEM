@@ -5,17 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
-<<<<<<< HEAD
+    <link rel="icon" type="image/x-icon" href="../Images/pos.png">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="../css/order.css">
-=======
-    <link rel="icon" type="image/x-icon" href="../Images/pos.png">
-    <link rel="stylesheet"href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
->>>>>>> 0db16462069166ed3f8bb88c498087fb01aaed9a
-    <link rel="stylesheet" href="../css/product.css">
     <script src="../JS/order.js" defer></script>
-    <script src="../JS/product.js"></script>
 </head>
 
 <body>
@@ -67,85 +61,92 @@
                 </li>
             </ul>
         </div>
-
-
-        <div class="main-1">
-            <div class="topbar-one">
-                <div class="cardbox">
-                    <div class="card">
-                        <button class="add">UPDATE</button>
-                    </div>
-                </div>
-                <div class="cardbox">
-                    <div class="card">
-                        <button class="total">TOTAL</button>
-                    </div>
-                </div>
-                <div class="cardbox">
-                    <div class="card">
-                        <button class="find">SEARCH</button>
-                    </div>
-                </div>
-                
-            </div>
-            <!-- ===============product detail -->
-            <div class="details-pro">
-                <h2>ORDER</h2>
-                <!-- ======Disaplay table======= -->
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Category</th>
-                            <th>Quantity</th>
-                            <th>Price</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>001</td>
-                            <td>Candy</td>
-                            <td>10</td>
-                            <td>2$</td>
-                            <td>
-                                <button class="btn btn-danger">Delete</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>002</td>
-                            <td>Energy drink</td>
-                            <td>15</td>
-                            <td>2$</td>
-                            <td>
-                                <button class="btn btn-danger">Delete</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>003</td>
-                            <td>Snacks</td>
-                            <td>10</td>
-                            <td>2$</td>
-                            <td>
-                                <button class="btn btn-danger">Delete</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>004</td>
-                            <td>Fastfood</td>
-                            <td>10</td>
-                            <td>2$</td>
-                            <td>
-                                <button class="btn btn-danger">Delete</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
     </div>
+    <main>
+        <div class="aside-right">
+            <div class="aside-right-header">
+                <div class="add-card">
+                    <div class="search">
+                        <input type="text" placeholder="Search ID" id="input-id">
+                        <button id="search-id">Search</button>
+                    </div>
+                    <div class="box-add-card">
+                        <div class="header-box">
+                        </div>
+                        <div class="body-box">
+                        </div>
+                        <button id="add-to-card">ADD TO CARD</button>
+                    </div>
+                </div>
+                <div class="table-item">
+                    <h1>LIST CARD</h1>
+                    <table id="table-oder">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Product Name</th>
+                                <th>Categories</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                                <th>Amount</th>
+                                <th>Sell Progress</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>001</td>
+                                <td>Cocacola</td>
+                                <td>10</td>
+                                <td>10</td>
+                                <td>2$</td>
+                                <td>10</td>
+                                <td>
+                                    <button class="btn btn-danger">Delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>002</td>
+                                <td>Milky Ta</td>
+                                <td>10</td>
+                                <td>10</td>
+                                <td>5$</td>
+                                <td>10</td>
+                                <td>
+                                    <button class="btn btn-danger">Delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>003</td>
+                                <td>Fastfood</td>
+                                <td>10</td>
+                                <td>10</td>
+                                <td>10$</td>
+                                <td>10</td>
+                                <td>
+                                    <button class="btn btn-danger">Delete</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>004</td>
+                                <td>Snacks</td>
+                                <td>10</td>
+                                <td>10</td>
+                                <td>4$</td>
+                                <td>10</td>
+                                <td>
+                                    <button class="btn btn-danger">Delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="aside-right-footer">
+                <h4>TOTAL PRICE: <span>50$</span></h4>
+                <button id="check-out"><a href="../index.html">CHECK OUT</a></button>
+            </div>
+        </div>
+    </main>
 </body>
-<script src="/JS/dashboard.js"></script>
-<!-- ====icon icons=== -->
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
 </html>
